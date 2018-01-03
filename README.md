@@ -36,5 +36,5 @@ If you're using yarn :
 yarn build
 ```
 
-## Building for production
+## Demo
 An online demo is available [here](http://anthonyksiezniak.fr/henri-potier)
