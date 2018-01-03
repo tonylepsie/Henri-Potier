@@ -1,0 +1,23 @@
+/* base */
+html, body {
+	background-color: #f5f5f5;
+}
+
+@font-face {
+	font-family: 'Harry P';
+	src: url('../fonts/HarryP.eot');
+	src: url('../fonts/HarryP.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/HarryP.woff2') format('woff2'),
+			url('../fonts/HarryP.woff') format('woff'),
+			url('../fonts/HarryP.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@include mobile {
+
+	.container {
+		padding: 0 .5rem; 
+	}
+}

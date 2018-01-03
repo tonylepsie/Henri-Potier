@@ -1,0 +1,32 @@
+//searchbar
+.search-bar {
+	margin-top: 3rem;
+
+	.field {
+		position: relative;
+	}
+
+	.search-results {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+		.result {
+			background: #fff;
+			padding: .2rem .4rem;
+			font-size: .8rem;
+			cursor: pointer;
+			&:hover {
+				background-color: #eee;
+			}
+		}
+		&:empty {
+			display: none;
+	 }
+	}
+}
+
+mark {
+	background-color: yellow;
+	color: black;
+}
