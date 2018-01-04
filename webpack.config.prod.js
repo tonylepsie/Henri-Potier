@@ -1,7 +1,7 @@
 /*eslint-env node*/
 
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import UglifyJsPlugin from 'uglifyes-webpack-plugin';
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var UglifyJsPlugin = require('uglifyes-webpack-plugin');
 
 module.exports = {
 	entry: [
