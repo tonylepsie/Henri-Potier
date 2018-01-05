@@ -9,6 +9,36 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors",
     "build": "webpack -p --config ./webpack.config.prod.js"
+    "test": "NODE_ENV=test jest --watch"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "!src/**/*.spec.{js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 70,
+        "branches": 70,
+        "functions": 70,
+        "lines": 70
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(css|less|styl|scss|sass)$": "<rootDir>/internals/mocks/cssModule.js",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
+    },
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/internals/testing/jest.config.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/internals/testing/test-bundler.js",
+    "testRegex": ".*\\.spec\\.js$",
+    "cacheDirectory": "/tmp/jest_0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -17,11 +47,15 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.13.0",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "http-server": "^0.10.0",
+    "jest": "^22.0.4",
+    "jest-localstorage-mock": "^2.1.0",
     "jsx-loader": "^0.13.2",
     "node-sass": "^4.7.2",
     "prop-types": "^15.6.0",
@@ -31,9 +65,12 @@
     "uglifyes-webpack-plugin": "^0.4.3",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^2.9.7",
+    "whatwg-fetch": "^2.0.3"
   },
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
     "bulma": "^0.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
