@@ -1,6 +1,6 @@
 /*eslint-env node*/
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: [
@@ -30,7 +30,7 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'file-loader',
 				options: {
-					name: '/fonts/[name].[ext]'
+					name: 'fonts/[name].[ext]'
 				}  
 			}
 		]
